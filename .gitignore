@@ -20,7 +20,7 @@ target/
 *.ipr
 # Ignore the configuration file containing the API keys
 src/main/resources/application.properties
-
+application.properties
 
 ### NetBeans ###
 /nbproject/private/
