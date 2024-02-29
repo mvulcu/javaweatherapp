@@ -18,6 +18,9 @@ target/
 *.iws
 *.iml
 *.ipr
+# Ignore the configuration file containing the API keys
+src/main/resources/application.properties
+
 
 ### NetBeans ###
 /nbproject/private/
