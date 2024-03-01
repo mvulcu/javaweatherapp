@@ -1,6 +1,5 @@
 # Use the official OpenJDK image for the base layer
-FROM openjdk:11-jdk-slim as build
-
+FROM openjdk:17-jdk-slim as build
 # Set the working directory in the container
 WORKDIR /app
 
@@ -16,7 +15,7 @@ COPY src src
 RUN ./mvnw package -DskipTests
 
 # Run the application on port 80
-FROM openjdk:11-jre-slim
+FROM openjdk:17-oracle
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 80

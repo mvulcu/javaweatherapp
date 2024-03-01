@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="background-image">
+<h1>Weather Information</h1>
+
+<div class="weather-info">
+    <p>City: <span th:text="${city}"></span></p>
+    <p>Temperature: <span th:text="${temperature}"></span> °C</p>
+    <p>Feels Like: <span th:text="${feelsLike}"></span> °C</p>
+</div>
+
+<a href="/weather"><button type="button">BACK</button></a>
+
+</body>
+</html>

@@ -20,8 +20,12 @@ public class WeatherService {
     }
 
     public WeatherResponse getWeatherForCity(String city) {
-        String url = apiUrl + "?q=" + city + "&appid=" + apiKey + "&units=metric"; // Добавлен параметр units=metric для получения температуры в Цельсиях
-        return restTemplate.getForObject(url, WeatherResponse.class);
+        try {
+            String url = apiUrl + "?q=" + city + "&appid=" + apiKey + "&units=metric";
+            return restTemplate.getForObject(url, WeatherResponse.class);
+        } catch (Exception e) {
+            return null; // Возвращаем null, если произошла ошибка
+        }
     }
 
 

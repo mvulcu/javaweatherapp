@@ -1,0 +1,40 @@
+body {
+    text-align: center; /* Центрирование всего содержимого */
+    display: flex;
+    flex-direction: column; /* Элементы идут в колонку, один за другим */
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+    height: 100vh; /* Высота всего экрана */
+    font-family: 'Roboto', sans-serif;
+}
+
+.background-image {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.background-404 {
+    background: url('404.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.error-info {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    margin-top: 20px; /* Отступ сверху для формы */
+    font-family: 'Roboto', sans-serif;
+}
+
+.weather-info {
+    /* стили для всего блока информации о погоде */
+    /* Например: */
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: lightgray;
+    font-size: 20px; /* изменение размера текста */
+    font-family: 'Roboto', sans-serif;
+}
