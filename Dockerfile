@@ -14,9 +14,9 @@ COPY src src
 # Build the application
 RUN ./mvnw package -DskipTests
 
-# Run the application on port 80
+# Run the application on the assigned port
 FROM openjdk:17-oracle
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
-EXPOSE 80
-ENTRYPOINT ["java","-jar", "app.jar"]
+EXPOSE 8080
+CMD ["java", "-jar", "app.jar", "--server.port=${PORT:8080}"]
