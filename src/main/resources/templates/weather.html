@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Weather App</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-
 </head>
-<body class="background-image">
-<h1>Weather Form</h1>
-<h2>Please select the city you are interested in to view the weather.</h2>
-<form action="/weather/view" method="get">
-    <input type="text" name="city" placeholder="Enter City Name">
-    <button type="submit">Show Weather</button>
-</form>
 
+<body class="background-image">
+    <div class="weather-welcome">
+        <h1>Weather Form</h1>
+        <h2>Please select the city you are interested in to view the weather.</h2>
+        <form action="/weather/view" method="get">
+            <input type="text" name="city" placeholder="Enter City Name">
+            <button type="submit">Show Weather</button>
+        </form>
+    </div>
 
 </body>
-</html>
 
+</html>
