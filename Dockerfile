@@ -6,17 +6,26 @@ WORKDIR /app
 # Copy the maven executable into the container
 COPY mvnw .
 COPY .mvn .mvn
-
-# Copy your pom.xml file and source code into the container
 COPY pom.xml .
 COPY src src
 
-# Build the application
+# Give execution rights on the mvnw
+RUN chmod +x mvnw
+
+# Build the application without running tests
 RUN ./mvnw package -DskipTests
 
-# Run the application on the assigned port
+# Start with a clean slate
 FROM openjdk:17-oracle
+
+# Set the working directory in the container
 WORKDIR /app
+
+# Copy only the artifact from the build stage
 COPY --from=build /app/target/*.jar app.jar
+
+# Instruct the port on which the container should listen for connections
 EXPOSE 8080
+
+# Define the command to run the app using the $PORT provided by Heroku
 CMD ["java", "-jar", "app.jar", "--server.port=${PORT:8080}"]
