@@ -1,5 +1,5 @@
 # WeatherApp
-
+![img.png](img.png)
 ## Accessing the Application
 The WeatherApp is deployed and accessible online. You can interact with the live application by visiting the following URL:
 [WeatherApp Live](https://sleepy-shelf-48977-40fe135f3481.herokuapp.com/weather)
@@ -61,7 +61,8 @@ WeatherApp is a Spring Boot application designed to provide weather information 
 
 ## CI/CD Pipeline
 GitHub Actions is configured for Continuous Integration, running tests on every push to the master branch or pull request. The successful build is then deployed to Heroku using Docker containers.
-
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
 ## Learning Outcomes
 - Developing a Spring Boot application exposing RESTful services.
 - Writing unit tests and integration tests using JUnit and Mockito.
