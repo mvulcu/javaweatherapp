@@ -25,12 +25,12 @@ public class WeatherServiceTest {
 
     @BeforeEach
     public void setup() {
-        // Этот метод будет вызван перед каждым тестовым методом и инициализирует моки
+        // This method will be called before each test method and initialize the mocks.
     }
 
     @Test
     public void whenCalledGetWeatherForCity_thenRetrieveWeatherDetails() {
-        // Создание мокового ответа, который будет возвращаться при вызове RestTemplate
+        // Creating a mock response to be returned when calling RestTemplate.
         WeatherResponse.Main mockMain = new WeatherResponse.Main();
         mockMain.setTemp(10.0);
         mockMain.setFeelsLike(8.0);
@@ -38,13 +38,13 @@ public class WeatherServiceTest {
         WeatherResponse mockResponse = new WeatherResponse();
         mockResponse.setMain(mockMain);
 
-        // Настройка мокового поведения RestTemplate
+        // RestTemplate mock behavior setting
         when(restTemplate.getForObject(anyString(), eq(WeatherResponse.class))).thenReturn(mockResponse);
 
-        // Вызов тестируемого метода
+        // Calling the method under test
         WeatherResponse result = weatherService.getWeatherForCity("Moscow");
 
-        // Проверка результатов
+        // Check the results
         assertEquals(10.0, result.getMain().getTemp());
         assertEquals(8.0, result.getMain().getFeelsLike());
     }

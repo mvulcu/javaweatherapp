@@ -21,15 +21,15 @@ public class WeatherController {
     @GetMapping("/api/weather/{city}")
     public ResponseEntity<WeatherResponse.Main> getWeather(@PathVariable String city) {
         WeatherResponse weatherResponse = weatherService.getWeatherForCity(city);
-        return ResponseEntity.ok(weatherResponse.getMain()); // Возвращаем только часть данных, касающихся погоды
+        return ResponseEntity.ok(weatherResponse.getMain()); // Return only the weather part of the data
     }
     @GetMapping("/weather/view")
     public String viewWeather(@RequestParam("city") String city, Model model) {
         WeatherResponse weatherResponse = weatherService.getWeatherForCity(city);
         if (weatherResponse == null) {
-            return "error"; // Имя шаблона страницы ошибки
+            return "error"; // Error page template name
         }
-        // Если все в порядке, добавляем данные в модель и возвращаем шаблон с погодой
+        // If everything is OK, add data to the model and return the weather template
         model.addAttribute("city", city);
         model.addAttribute("temperature", weatherResponse.getMain().getTemp());
         model.addAttribute("feelsLike", weatherResponse.getMain().getFeelsLike());
@@ -40,7 +40,7 @@ public class WeatherController {
 
     @GetMapping("/weather")
     public String weatherForm() {
-        return "weather"; // Возвращает имя начального шаблона с формой
+        return "weather"; // Returns the name of the initial template with the form
     }
 
 

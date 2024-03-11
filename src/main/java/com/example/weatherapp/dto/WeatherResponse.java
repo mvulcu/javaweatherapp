@@ -3,11 +3,11 @@ package com.example.weatherapp.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-// Игнорируем неизвестные свойства для того, чтобы избежать ошибок при десериализации
+// Ignore unknown properties to avoid deserialization errors
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherResponse {
 
-    // Внутренний статический класс для сопоставления с объектом "main" в JSON ответе
+    // Internal static class to map to the "main" object in the JSON response
     public static class Main {
 
         @JsonProperty("temp")
@@ -37,7 +37,7 @@ public class WeatherResponse {
     @JsonProperty("main")
     private Main main;
 
-    // Getters и Setters для внешнего класса
+    // Getters and Setters for external class
     public Main getMain() {
         return main;
     }
