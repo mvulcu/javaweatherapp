@@ -26,7 +26,7 @@ public class WeatherService {
             String url = apiUrl + "?q=" + city + "&appid=" + apiKey + "&units=metric";
             return restTemplate.getForObject(url, WeatherResponse.class);
         } catch (Exception e) {
-            return null; // Return null if an error occurred
+            return null; 
         }
     }
     public class WeatherService {
