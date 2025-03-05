@@ -2,7 +2,6 @@ package com.example.weatherapp;
 
 import com.example.weatherapp.dto.WeatherResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -29,9 +28,6 @@ public class WeatherService {
             return null; 
         }
     }
-    public class WeatherService {
-        @Autowired
-        private SomeOtherService someOtherService; // Make sure this dependency exists
-    }
-
+    
+ 
 }
